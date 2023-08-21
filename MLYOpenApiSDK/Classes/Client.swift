@@ -58,7 +58,7 @@ public class Client: NSObject {
 }
 
 extension Client: URLSessionDelegate,URLSessionTaskDelegate, UINavigationControllerDelegate {
-    private func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
+    public func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
         let currentProgress = (totalBytesSent * 100) / totalBytesExpectedToSend
         let currentProgressValue = Float(Double(currentProgress) *  1 / 100.0)
         self.delegate?.urlSession(session, task: task, didSendBodyData: bytesSent, currentProgress: Float(currentProgress), currentProgressValue: currentProgressValue)
