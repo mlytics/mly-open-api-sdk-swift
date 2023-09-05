@@ -1,1 +1,1 @@
-# mly-open-api-sdk-swift
+# mly-stream-sdk-uploader-swift
